@@ -1,0 +1,5 @@
+node_modules/
+dist/
+*.tgz
+.dsh-ops-update-*.lock
+.DS_Store

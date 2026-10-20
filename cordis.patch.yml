@@ -1,0 +1,24 @@
+# dsh-newapi-balance bundle patch.
+#
+# This row is what the loader mounts once `dsh-newapi-balance` is listed in a
+# profile's `dsh.profile.bundles`. The config here is deliberately empty: the
+# package ships neutral defaults, and every profile configures its own relay
+# (see README → 配置 / 给别人用).
+#
+# Change the values in YOUR profile, not in this file — an edit here is
+# overwritten by the next reinstall of the package.
+- insert:
+    - id: newapi-balance
+      name: dsh-newapi-balance
+      config:
+        enabled: true
+        # Relay site root, no trailing /v1. Empty = not configured yet.
+        baseUrl: ""
+        # Name of an entry in ~/.dsh/.credentials.yaml holding a site sk- key
+        # (the same env name your llm provider config uses, e.g. N_API_KEY).
+        apiKeyEnv: ""
+        # Optional: 个人设置 → 安全设置 access token + numeric user id switch the
+        # readout from key usage to account balance.
+        accessToken: ""
+        userId: ""
+        refreshMinutes: 5

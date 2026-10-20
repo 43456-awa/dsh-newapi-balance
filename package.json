@@ -1,0 +1,50 @@
+{
+  "name": "dsh-newapi-balance",
+  "version": "0.1.10",
+  "description": "A quiet dot at the composer's top-right corner that opens a floating capsule with a New API / One API relay's remaining balance, key usage, or quota limit.",
+  "icon": "icon.svg",
+  "type": "module",
+  "license": "MIT",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "icon.svg",
+    "lib",
+    "cordis.patch.yml",
+    "README.md",
+    "docs"
+  ],
+  "keywords": [
+    "dsh-plugin",
+    "newapi",
+    "oneapi",
+    "balance",
+    "quota"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-slots"
+      ]
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "*",
+    "@deepseek-ai/schemastery": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/43456-awa/dsh-newapi-balance.git"
+  },
+  "homepage": "https://github.com/43456-awa/dsh-newapi-balance#readme",
+  "bugs": {
+    "url": "https://github.com/43456-awa/dsh-newapi-balance/issues"
+  }
+}

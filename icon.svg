@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" role="img" aria-label="newapi-balance">
+  <circle cx="12" cy="12" r="8.75" fill="none" stroke="currentColor" stroke-width="1.6" />
+  <path d="M8.6 7.6 12 11.5l3.4-3.9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M12 11.5v5.1M9.4 12.6h5.2M9.4 14.7h5.2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+  <circle cx="18.6" cy="18.6" r="2.1" fill="#16a34a" stroke="var(--dsw-alias-bg-layer-1,#ffffff)" stroke-width="1.1" />
+</svg>
