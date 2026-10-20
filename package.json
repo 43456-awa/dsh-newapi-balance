@@ -1,6 +1,6 @@
 {
   "name": "dsh-newapi-balance",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "description": "A quiet dot at the composer's top-right corner that opens a floating capsule with a New API / One API relay's remaining balance, key usage, or quota limit.",
   "icon": "icon.svg",
   "type": "module",
