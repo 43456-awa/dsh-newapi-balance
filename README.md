@@ -1,6 +1,13 @@
 # dsh-newapi-balance
 
+[![npm version](https://img.shields.io/npm/v/dsh-newapi-balance.svg)](https://www.npmjs.com/package/dsh-newapi-balance)
+[![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 在 DeepSeek Harness 输入框右上角放一个安静的小圆点，点开是一枚悬浮胶囊，随时看中转站（New API / One API 系）还剩多少额度——对应 CC Switch 的「余量查询」。
+
+```text
+plugin_manager action=install_bundle target="dsh-newapi-balance"
+```
 
 ![展开的悬浮胶囊：剩余额度、已用/总额、账号与更新时间](docs/capsule.png)
 
@@ -142,7 +149,8 @@ client 端（`lib/client.js`）只负责每 60 秒读一次这个路由并渲染
 
 ## 安装 / 更新
 
-- **首次安装**：`plugin_manager` → `install_bundle`，`target` 填包目录的绝对路径，或 `.tgz` 文件路径（两种都验证过）。
+- **从 npm（推荐）**：`plugin_manager` → `install_bundle`，`target` 填包名 `dsh-newapi-balance`（或带版本号 `dsh-newapi-balance@0.1.10`），会自动从 registry 拉取。已发布在 <https://www.npmjs.com/package/dsh-newapi-balance>。
+- **首次安装（本地）**：`plugin_manager` → `install_bundle`，`target` 填包目录的绝对路径，或 `.tgz` 文件路径（两种都验证过）。
 - **从 GitHub**：仓库在 <https://github.com/43456-awa/dsh-newapi-balance>，`git clone` 后按目录方式装，或直接下 Releases 里的 `.tgz`。
 - **升级**：`install_bundle` 指向**新的 `.tgz`** 会直接覆盖安装；指向**同一个目录**会报 `already-installed`，需要先 `remove_bundle` 再装（想要"改代码立刻生效"就用目录装 + 重装）。
 - **只改配置**：不用重装、不用重启，改 `~/.dsh/newapi-balance.json` 后等下一次轮询即可；改 profile 覆盖块或界面配置则重启应用后生效。
