@@ -45,6 +45,7 @@ plugin_manager action=install_bundle target="dsh-newapi-balance"
 | 用户 ID（可选） | 站点「个人设置」里的数字 ID。只填令牌也能读余额（站点用令牌认人），少数站点会额外校验这个头，报 401 时再填 |
 | 访问令牌（可选） | 站点「个人设置 → 安全设置」里生成。**填了才看得到账户剩余**（就是 CC Switch 里那两栏），单独填这一项就够。同样有小眼睛可以看已保存的值 |
 | 间隔分钟 | 自动查询间隔，0 表示不自动；中转站限流严，建议 5 以上 |
+| 显示货币 | **美元（不换算，默认）** 或 **人民币（按站点汇率换算）**。站点记账本身用美元，人民币是 `quota_per_unit` 与站点汇率换算出来的，不需要就别开 |
 
 - 密钥和密钥名二选一：黏一把密钥进「密钥」，就不用再去 `~/.dsh/.credentials.yaml` 里配名字。
 - 只填密钥：读到的是**这把密钥**的用量与额度上限；`unlimited_quota` 的密钥只能看已用。
@@ -76,6 +77,7 @@ N_API_KEY: sk-xxxxxxxxxxxxxxxx
     accessToken: ""
     userId: ""
     refreshMinutes: 5
+    currency: usd
 ```
 
 **别改插件包里那份 `cordis.patch.yml`**（`node_modules/dsh-newapi-balance/cordis.patch.yml`）：它只提供空默认值，重装插件时会被覆盖；自己的值写在 profile 里才留得住。
@@ -88,7 +90,8 @@ N_API_KEY: sk-xxxxxxxxxxxxxxxx
 {
   "baseUrl": "https://newapi.example.com",
   "apiKeyEnv": "N_API_KEY",
-  "refreshMinutes": 5
+  "refreshMinutes": 5,
+  "currency": "usd"
 }
 ```
 

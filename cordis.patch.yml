@@ -22,3 +22,4 @@
         accessToken: ""
         userId: ""
         refreshMinutes: 5
+        currency: usd
